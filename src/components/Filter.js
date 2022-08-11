@@ -15,7 +15,7 @@ export default function Filter({ isOn, setIsOn, setSort }) {
         <div>
             <button onClick={handleClick}>{isOn ? 'Filter: Greased' : 'Filter: None'}</button>
             <div>
-                <label for='sort'>Sort By:</label>
+                <label htmlFor='sort'>Sort By:</label>
                 <select id='sort' name='sort' onChange={handleSort}>
                     <option value='None'>All</option>
                     <option value='Name'>Name</option>

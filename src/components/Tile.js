@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 export default function Tile({ hog: {name, image, specialty, weight, greased, "highest medal achieved": medal} }) {
     const [display, setDisplay] = useState(false)
     const [show, setShow] = useState(true)
+    
     function handleDisplay(e) {
         const A = !display
         setDisplay(A)
