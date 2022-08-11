@@ -2,15 +2,21 @@ import React, { useState } from 'react'
 
 export default function Tile({ hog: {name, image, specialty, weight, greased, "highest medal achieved": medal} }) {
     const [display, setDisplay] = useState(false)
-    function handleDisplay() {
+    const [show, setShow] = useState(true)
+    function handleDisplay(e) {
         const A = !display
         setDisplay(A)
     }
+    function handleShow(){
+        const negshow = !show
+        setShow(negshow)
+    }
+
 
     return (
-        <div onClick={handleDisplay}>
-            <h1>{name}</h1>
-            <img src={image} alt='Pig' />
+        <div>
+            <h1 onClick={handleShow}>{name}</h1>
+            <img src={image} alt='Pig' onClick={handleDisplay} style={{display: show ? "block" : "none"}} />
             {display &&
                 <>
                     <p>Specialty: {specialty}</p>
